@@ -1,0 +1,126 @@
+<div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+    <div class="wrapper wrapper--w960">
+        <div class="card card-2">
+            <div class="card-heading"></div>
+            <div class="card-body">
+                <h2 class="title">Update Player Application</h2>
+                <form [formGroup]="formGroup">
+                    <div class="content-1">
+                        <div class="input-group" style="width: 200px;">
+                            <input class="input--style-2" type="text" placeholder="Name" 
+                            name="name" formControlName='playerName' required>
+                        </div>
+    
+                        <div class="input-group address" style="width: 200px;">
+                            <input class="input--style-2" type="text" placeholder="Address" 
+                            name="address" formControlName='address' required>
+                        </div>
+                    </div>
+                    <div class="content-1">
+                        <div class="input-group" style="width: 200px;">
+                            <input class="input--style-2" type="number" placeholder="Height" 
+                            name="height" formControlName='height' required>
+                        </div>
+    
+                        <div class="input-group address" style="width: 200px;">
+                            <input class="input--style-2" type="number" placeholder="Weight" 
+                            name="weight" formControlName='weight' required>
+                        </div>
+                    </div>
+                    
+                    <div class="row row-space">
+                        <div class="">
+                            <div class="input-group">
+                                <input class="input--style-2" type="number" 
+                                style="width: 200px;" placeholder="Card Number" 
+                                name="cardNumber" formControlName='cardNumber'>
+                                
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="input-group">
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="gender" style="width: 200px;" formControlName='sysGender'
+                                    class="select-css" required>
+                                        <option disabled="disabled" selected="selected" value=''>Gender</option>
+                                        <option *ngFor='let gender of genderLookup' [value]="gender.id">{{gender.gender}}</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="content-1">
+                        <div class="input-group" style="width: 200px;">
+                            <input class="input--style-2" type="number" placeholder="Passport Number" 
+                            name="passportNumber" formControlName='passportNumber'>
+                        </div>
+    
+                        <div class="input-group address" style="width: 200px;">
+                            <input class="input--style-2" type="text" placeholder="Amount Paid" 
+                            name="amountPaid" formControlName='amountPaid' required>
+                        </div>
+                    </div>
+                  
+                    <div class="content-1">
+                        <div class="">
+                            <select style="width: 200px;" formControlName='sysSubtype' required class="select-css">
+                                <option disabled="disabled" selected="selected" value=''>Select SubType</option>
+                                <option *ngFor='let subtype of subtypeLookup' [value]="subtype.id">
+                                    {{subtype.subtypeName}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="">
+                            <select style="width: 200px;" formControlName='sysExerciseType' required class="select-css">
+                                <option disabled="disabled" selected="selected" value=''>Select Exercise Tpye</option>
+                                <option *ngFor='let exerciseType of exerciseTypeLookup' [value]="exerciseType.id">
+                                    {{exerciseType.exerciseTypeName}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="content-1 text-top">
+                        <div class="">
+                            <div class="input-group">
+                                <input class="input--style-2" type="number" placeholder="Phone Number" 
+                                name="phone" formControlName='phone' required>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="input-group">
+                                <textarea class="texterea--style-2 text-erea" placeholder="Player Championships" 
+                                name="playerChampionships" cols="25" rows="2" 
+                                formControlName='playerChampionships'></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="input-group" style="width: 200px;">
+                            <input class="input--style-2" type="number" placeholder="Age" 
+                            name="age" formControlName='age' required>
+                        </div>
+                    </div>
+
+                    <div class="p-t-30 content-1">
+                        <div class="subscription">
+                            <button class="btn btn--radius btn--green" (click)="updatePlayer()">update Player</button>
+                            <i class="fas fa-check" *ngIf="updatePlayerStatus"></i>
+                            <i class="fas fa-times" *ngIf="!updatePlayerStatus"></i>
+                        </div>
+                        <div class="home-back">
+                            <a [routerLink]='["/homePage"]' class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+                                Back Home
+                                <i class="fa fa-long-arrow-right m-l-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

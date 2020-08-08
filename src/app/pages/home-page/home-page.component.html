@@ -1,0 +1,30 @@
+<app-nav-bar></app-nav-bar>
+<!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro" class="clearfix">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center">
+        <div class="col-md-6 intro-info order-md-first order-last">
+          <a [routerLink]="['/playerRegsiter']" class="btn btn-outline-light scrollto player">+ Player</a>
+          <h2>CENTRER GYM<br>for Your <span>GYM Place!</span></h2>
+          <form [formGroup]="formGroup">
+            <div class="form__group field">
+              <input type="input" class="form__field" placeholder="Player Code" 
+              formControlName="codeOrPlayerName" name="name" id='name' required />
+              <label for="name" class="form__label">Player Code</label>
+            </div>
+          </form>
+          <div>
+            <a (click)="getplayerByCode()" class="btn-get-started scrollto mPlayer">About Player</a> 
+            <a class="btn-get-started scrollto right">Your Admin</a>
+          </div>
+        </div>
+  
+        <div class="col-md-6 intro-img order-md-last order-first">
+          <img src="/assets/img/homeIntro.svg" alt="" class="img-fluid">
+        </div>
+      </div>
+
+    </div>
+  </section><!-- #intro -->

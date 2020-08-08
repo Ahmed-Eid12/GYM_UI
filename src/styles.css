@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+body {
+    /* background-color: rgb(167, 167, 167);
+    font-family: Roboto, Arial, sans-serif; */
+}
+
+.content-status {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 10px;
+}

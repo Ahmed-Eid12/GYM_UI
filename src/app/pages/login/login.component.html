@@ -1,0 +1,19 @@
+<div class="wrapper">
+
+    <form class="form-signin" [formGroup]="formGroup">       
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" name="username" placeholder="Email Address" 
+      required="true" autofocus="true" formControlName="username">
+      <input type="password" class="form-control" name="password" formControlName="password" 
+      placeholder="Password" required="true">      
+      <label class="checkbox">
+        <small class="form-text text-muted">Welcome To - CENTER GYM</small>
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" (click)='login()'>Login</button>   
+      <small class="form-text text-muted"><a >Forget Password</a> | <a >Policy</a></small>
+    </form>
+    
+  </div>
+  <div class="status">
+      <app-page-status></app-page-status>
+  </div>
