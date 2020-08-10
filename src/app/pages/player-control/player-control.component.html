@@ -1,0 +1,73 @@
+<div class="nav-bar-admin">
+    <app-nav-bar></app-nav-bar>
+  </div>
+
+<div class="section" id="trainers">
+    <div class="container">
+        <div class="input-1">
+            <label for=""> Search About Player </label>
+            <div>
+                <form [formGroup]="formGroup">
+                    <input type="text" style="width: 300px; margin-bottom: 15px; display: inline-block;" 
+                    placeholder="Player Code - Player Name" formControlName="codeOrPlayerName" 
+                    class="form-control"> <button class="btn btn-outline-light search" 
+                    (click)="getplayerByCode()">Search Player</button> 
+                    <a class="players-2" (click)="backedToAllData()">get all Players</a>
+                </form>
+            </div>
+        </div>
+        <div class="row" *ngIf='!searchPlayer'>
+            <div class="col-lg-4" *ngFor='let players of playersList;'>
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img  src="/assets/playerImage/{{players.playerImage}}" alt="">
+                    </div>
+                    <div class="down-content">
+                        <a (click)='visitPlayerPage($event)'><span class="name">( {{players.playerName}} )</span></a>
+                        <h4>{{players.sysExerciseType.exerciseTypeName}}</h4>
+                        <span class="para">
+                           <p>{{players.playerChampionships}}</p>
+                        </span>
+                        <!-- <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul> -->
+                    </div>
+                    <div class="btns"> 
+                        <!-- <button class="btn btn-info">Update</button> -->
+                        <button class="btn btn-warning" (click)="deletePlayer($event)">Delete</button> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" *ngIf='searchPlayer'>
+            <div class="col-lg-4" >
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img  src="/assets/playerImage/{{searchPlayer.playerImage}}" alt="">
+                    </div>
+                    <div class="down-content">
+                        <a (click)='visitPlayerPage($event)'><span class="name">( {{searchPlayer.playerName}} )</span></a>
+                        <h4>{{searchPlayer.sysExerciseType.exerciseTypeName}}</h4>
+                        <span class="para">
+                           <p>{{searchPlayer.playerChampionships}}</p>
+                        </span>
+                        <!-- <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul> -->
+                    </div>
+                    <div class="btns"> 
+                        <!-- <button class="btn btn-info">Update</button> -->
+                        <button class="btn btn-warning" (click)="deletePlayer($event)">Delete</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

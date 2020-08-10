@@ -4,6 +4,7 @@ import { IntegrationService } from 'src/app/services/serviceIntegration/integrat
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserGymAdmin } from 'src/app/classes/user/user-gym-admin';
 import { Player } from 'src/app/classes/player/player';
+import { CustomService } from 'src/app/services/custom/custom.service';
 
 @Component({
   selector: 'app-player',
@@ -31,7 +32,8 @@ export class PlayerComponent implements OnInit {
   });
 
   constructor(private storeData: StoreDataService,
-    private integration: IntegrationService) { }
+    private integration: IntegrationService,
+    private custom: CustomService) { }
 
   token;
   adminUser;
@@ -69,6 +71,7 @@ export class PlayerComponent implements OnInit {
           if(playerGenerated) {
             this.playerCode = playerGenerated.code;
             this.playerStatus = true;
+            this.custom.resetComponentElement(this.formGroup);
           } else {
             this.playerStatus = false;
           }

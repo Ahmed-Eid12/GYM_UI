@@ -155,4 +155,17 @@ export class IntegrationService {
     return this.http.put(this.URLIntegration+'updatePlayerHulfMonthNOByCode/'+ code ,hulfMonthNO ,requestOptions);
   }
 
+  // check Password Validation ... 
+  checkPasswordValidation(password , userId, token) {
+    const headerDict = {
+      'Authorization': 'bearer '+token
+    }
+    
+    const requestOptions = {                                                                                                                                                                                 
+      headers: new HttpHeaders(headerDict), 
+    };
+
+    return this.http.post(this.URLIntegration+'checkPasswordValidation/'+userId , password, requestOptions);
+  }
+
 }

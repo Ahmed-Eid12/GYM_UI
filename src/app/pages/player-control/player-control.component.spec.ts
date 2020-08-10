@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminManagerSliderComponent } from './admin-manager-slider.component';
+import { PlayerControlComponent } from './player-control.component';
 
-describe('AdminManagerSliderComponent', () => {
-  let component: AdminManagerSliderComponent;
-  let fixture: ComponentFixture<AdminManagerSliderComponent>;
+describe('PlayerControlComponent', () => {
+  let component: PlayerControlComponent;
+  let fixture: ComponentFixture<PlayerControlComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminManagerSliderComponent ]
+      declarations: [ PlayerControlComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminManagerSliderComponent);
+    fixture = TestBed.createComponent(PlayerControlComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,66 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="login100-more" style="background-image: url('/assets/img/5.jpg');"></div>
+
+        <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+            <form class="login100-form validate-form" [formGroup]='formGroup'>
+                <span class="login100-form-title p-b-59 register-sign-up">
+                    Update User Admin
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <span class="label-input100">Full Name</span>
+                    <input class="input100" type="text" formControlName='username' name="name" placeholder="Full Name">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Email</span>
+                    <input class="input100" type="email" formControlName='email' name="email" placeholder="Email Addess">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <!-- <div class="changePassword">
+                    <button class="btn btn-outline-light btn-s" (click)="changePassword()">Change Password</button>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Password is required" 
+                    *ngIf="change">
+                    <span class="label-input100">Password</span>
+                    <input class="input100" type="password" name="pass" formControlName='password' placeholder="Password">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Repeat Password is required" 
+                    *ngIf="change">
+                    <span class="label-input100">Confirm Password</span>
+                    <input class="input100" type="password" formControlName='cPassword' name="repeat-pass" 
+                    placeholder="Confirm Password">
+                    <span class="focus-input100"></span>
+                </div> -->
+
+                <div class="flex-m w-full p-b-33">
+                    <div class="contact100-form-checkbox">
+                        <input class="form-control" id="ckb1" formControlName='agree' type="checkbox" name="remember-me">
+                        I agree to ( Update ) the Terms of User
+                    </div>
+
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn" (click)="updateUserAdmin()">
+                            Update User
+                        </button>
+                    </div>
+
+                    <a [routerLink]='["/homePage"]' class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+                        Back Home
+                        <i class="fa fa-long-arrow-right m-l-5"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

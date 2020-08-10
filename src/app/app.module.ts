@@ -15,13 +15,16 @@ import { LoginComponent } from './pages/login/login.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { PlayerComponent } from './pages/player/player.component';
 import { ManpulatePlayerComponent } from './pages/manpulate-player/manpulate-player.component';
-import { AdminManagerSliderComponent } from './pages/admin-manager-slider/admin-manager-slider.component';
 import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
 import { PageStatusComponent } from './utils/page-status/page-status.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { UserRegisterComponent } from './pages/user-register/user-register.component';
 import { UpdatePlayerComponent } from './pages/update-player/update-player.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AdminHomePageComponent } from './pages/admin-home-page/admin-home-page.component';
+import { AdminUsersControlComponent } from './pages/admin-users-control/admin-users-control.component';
+import { PlayerControlComponent } from './pages/player-control/player-control.component';
+import { UpdateUserControlComponent } from './pages/update-user-control/update-user-control.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +37,16 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     UserProfileComponent,
     PlayerComponent,
     ManpulatePlayerComponent,
-    AdminManagerSliderComponent,
     NavBarComponent,
     PageStatusComponent,
     ContactUsComponent,
     UserRegisterComponent,
     UpdatePlayerComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AdminHomePageComponent,
+    AdminUsersControlComponent,
+    PlayerControlComponent,
+    UpdateUserControlComponent
   ],
   imports: [
     BrowserModule,

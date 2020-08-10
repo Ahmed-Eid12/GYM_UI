@@ -16,6 +16,7 @@ export class NavBarComponent implements OnInit {
   }
 
   logout() {
+    
     this.storeData.deleteStorageElement('gym-status-gym');
     this.storeData.deleteStorageElement('gym-ul-gym');
     this.storeData.deleteStorageElement('gym-pc-gym');

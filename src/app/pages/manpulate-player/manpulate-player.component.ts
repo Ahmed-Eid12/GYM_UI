@@ -37,8 +37,8 @@ export class ManpulatePlayerComponent implements OnInit, OnDestroy {
     this.integration
       .getPlayerByCode(this.code, this.token)
       .subscribe((player: Player) => {
-        console.log(player)
         if (player) {
+          console.log(player)
           this.playerSelected = player;
 
           this.decrimentDays(player);
@@ -58,7 +58,6 @@ export class ManpulatePlayerComponent implements OnInit, OnDestroy {
 
   // change player image
   changePlayerImage($event) {
-    console.log($event);
     this.selectedImage = $event.target.files[0];
     this.integration
       .changePlayerImage(this.selectedImage, this.code, this.token)

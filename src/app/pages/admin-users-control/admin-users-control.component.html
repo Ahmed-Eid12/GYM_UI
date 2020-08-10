@@ -1,0 +1,78 @@
+<div class="nav-bar-admin">
+    <app-nav-bar></app-nav-bar>
+  </div>
+
+<div class="section" id="trainers">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4" *ngFor='let users of usersList;'>
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img  src="/assets/img/user.jpg" alt="">
+                    </div>
+                    <div class="down-content">
+                        <span class="name">
+                            ( {{users.userName}} ) 
+                            <span class="change-password" (click)="getForUpdatePassword($event)" title="تغيير كلمة المرور">
+                                <i class="fas fa-lock" (click)="open(content)"></i>
+                            </span>
+                        </span>
+                        <h4>Center GYM</h4>
+                        <p>have GYM in el-nakhas <br>
+                        good place for all city behind,
+                        on road of elnaf2 ...</p>
+                        <!-- <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul> -->
+                    </div>
+                    <div class="btns"> 
+                        <button class="btn btn-info" (click)='getForUpdate($event)'>Update</button>
+                        <button class="btn btn-warning" (click)="getForDelete($event)">Delete</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  <!--   popup    -->
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">
+        Change User Password
+          <i class="fas fa-check" *ngIf="updatePasswordStatus"></i>
+          <i class="fas fa-times" *ngIf="!updatePasswordStatus"></i>
+      </h4>
+        
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="formGroup" class="form-popup">
+        <div class="form-group">
+          <div class="input-group content-1">
+            <div class="input-group opassword" style="width: 200px;">
+                <input class="form-control" type="password" placeholder="Old Password" 
+                name="password" formControlName='password' autofocus required>
+              </div>
+            <div class="input-group npassword" style="width: 200px;">
+              <input class="form-control" type="password" placeholder="New Password" 
+              name="npassword" formControlName='npassword' autofocus required>
+            </div>
+            <div class="input-group cpassword" style="width: 200px;">
+              <input class="form-control" type="password" placeholder="Confirm Password" 
+              name="cpassword" formControlName='cpassword' required>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-exit" (click)="modal.close('Save click')">Exit</button>
+      <button type="button" class="btn btn-resub" (click)="updateUserPassword()">Change Password</button>
+    </div>
+  </ng-template>

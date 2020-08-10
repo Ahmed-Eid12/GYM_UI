@@ -6,18 +6,18 @@
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
         <div class="col-md-6 intro-info order-md-first order-last">
-          <a [routerLink]="['/playerRegsiter']" class="btn btn-outline-light scrollto player">+ Player</a>
+          <a (click)="open2(content2)" class="btn btn-outline-light scrollto player">+ Player</a>
           <h2>CENTRER GYM<br>for Your <span>GYM Place!</span></h2>
           <form [formGroup]="formGroup">
             <div class="form__group field">
               <input type="input" class="form__field" placeholder="Player Code" 
               formControlName="codeOrPlayerName" name="name" id='name' required />
-              <label for="name" class="form__label">Player Code</label>
+              <label for="name" class="form__label">Player Code - Player Name</label>
             </div>
           </form>
           <div>
             <a (click)="getplayerByCode()" class="btn-get-started scrollto mPlayer">About Player</a> 
-            <a class="btn-get-started scrollto right">Your Admin</a>
+            <a class="btn-get-started scrollto right" (click)="open(content)">Your Admin</a>
           </div>
         </div>
   
@@ -28,3 +28,64 @@
 
     </div>
   </section><!-- #intro -->
+
+
+   <!--   popup    -->
+
+   <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">
+        Plaese type your password
+          <i class="fas fa-check" *ngIf="userPsswordStatus"></i>
+          <i class="fas fa-times" *ngIf="!userPsswordStatus"></i>
+      </h4>
+        
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="formGroup2" class="form-popup">
+        <div class="form-group">
+          <div class="input-group content-1">
+            <div class="input-group opassword" style="width: 200px;">
+                <input class="form-control" type="password" placeholder="User Password" 
+                name="password" formControlName='password' autofocus required>
+              </div>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-exit" (click)="modal.close('Save click')">Exit</button>
+      <button type="button" class="btn btn-resub" (click)="checkPasswordValidationAdmin()">Check Password</button>
+    </div>
+  </ng-template>
+
+   <!--   popup    -->
+
+   <ng-template #content2 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">
+        Plaese type your password
+          <i class="fas fa-check" *ngIf="userPsswordPlayerStatus"></i>
+          <i class="fas fa-times" *ngIf="!userPsswordPlayerStatus"></i>
+      </h4>
+        
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="formGroup2" class="form-popup">
+        <div class="form-group">
+          <div class="input-group content-1">
+            <div class="input-group opassword" style="width: 200px;">
+                <input class="form-control" type="password" placeholder="User Password" 
+                name="password" formControlName='password' autofocus required>
+              </div>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-exit" (click)="modal.close('Save click')">Exit</button>
+      <button type="button" class="btn btn-resub" (click)="checkPasswordValidationPlayer()">Check Password</button>
+    </div>
+  </ng-template>

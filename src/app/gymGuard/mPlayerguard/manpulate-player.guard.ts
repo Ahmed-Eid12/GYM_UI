@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StoreDataService } from 'src/app/services/storage/store-data.service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -8,7 +8,8 @@ import { UserService } from 'src/app/services/user/user.service';
   providedIn: 'root'
 })
 export class ManpulatePlayerGuard implements CanActivate {
-  constructor(private storeData: StoreDataService){}
+  constructor(private storeData: StoreDataService,
+    private router: Router){}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -17,6 +18,7 @@ export class ManpulatePlayerGuard implements CanActivate {
     if(playerStatus && playerCode) {
       return true;
     } else {
+      this.router.navigate(['/login']);
       return false;
     }
   }

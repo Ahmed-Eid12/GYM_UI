@@ -42,7 +42,8 @@ export class UpdatePlayerComponent implements OnInit, OnDestroy {
       'sysGender': new FormControl('', [Validators.required]),
       'height': new FormControl('', [Validators.required]),
       'weight': new FormControl('', [Validators.required]),
-      'age': new FormControl('', [Validators.required])
+      'age': new FormControl('', [Validators.required]),
+      'amountRest': new FormControl('',[]),
     });
 
   token;
@@ -82,6 +83,7 @@ export class UpdatePlayerComponent implements OnInit, OnDestroy {
     this.formGroup.get('phone').setValue(this.playerSelected.phone);
     this.formGroup.get('playerChampionships').setValue(this.playerSelected.playerChampionships);
     this.formGroup.get('amountPaid').setValue(this.playerSelected.amountPaid);
+    this.formGroup.get('amountRest').setValue(this.playerSelected.amountRest);
     this.formGroup.get('height').setValue(this.playerSelected.height);
     this.formGroup.get('weight').setValue(this.playerSelected.weight);
     this.formGroup.get('age').setValue(this.playerSelected.age);
